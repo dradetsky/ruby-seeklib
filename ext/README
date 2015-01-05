@@ -1,0 +1,2 @@
+Put the lib here and it'll be loaded instead of the system version
+Stole idea from the zeromq for ruby guy.
