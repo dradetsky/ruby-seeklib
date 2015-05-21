@@ -11,6 +11,7 @@ since I don't know how to package a library along with a gem (rubygems
 only explains extconf-style packaging), and I don't have time to
 rewrite it as an extension.
 
+
 Usage
 -----
 
@@ -62,6 +63,7 @@ SeekLib.calc_diff(gss, gss) + 50           # => 17.969999238848686 (wait, diff(a
 SeekLib.calc_diff(rss, rss) + 50           # => 9.8899996727705 (yep, unfortunately)
 ```
 
+
 Getting
 -------
 
@@ -82,3 +84,26 @@ It's not actually published yet, so you have to do everything yourself.
 2. `gem build seeklib.gemspec`
 
 3. `gem install seeklib-0.0.1.gem`
+
+
+Background discussion
+---------------------
+
+TODO: Add more. Briefly, I was working on a project where I really,
+really needed a good, fast perceptual hash. pHash, though excellent,
+was nowhere near adequate in terms of speed. The fact that the
+fingerprint was ~100x bigger didn't really matter to me (pHash fingerprints
+are only 8 bytes). The main thing preventing other people from using
+the imgseek fingerprint is that it was embedded in a mass of ancient
+code that I doubt anyone wanted to touch. Original is here:
+
+https://github.com/ricardocabral/iskdaemon/blob/master/src/imgSeekLib/imgdb.cpp
+
+No offense intended to Ricardo, who I'm sure has better things to do
+than clean it up.
+
+It worked beautifully for me, and I made a number of improvements to
+its performance (which was critical for my project), particularly
+switching from ImageMagick to CImg. The project is currently stalled,
+So I figured I'd release it for the next guy who needs a fingerprint
+library (girls may use it too; I'm not particular).
