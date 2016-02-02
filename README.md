@@ -4,13 +4,7 @@ ruby-seeklib
 FFI bindings to allow use of seeklib with ruby. seeklib is basically
 an alternative to pHash/pHashion. See here for background:
 
-http://hackerlabs.org/blog/2012/07/30/organizing-photos-with-duplicate-and-similarity-checking/
-
-Unfortunately, it relies on you having seeklib installed already,
-since I don't know how to package a library along with a gem (rubygems
-only explains extconf-style packaging), and I don't have time to
-rewrite it as an extension.
-
+http://hackerlabs.github.io/blog/2012/07/30/organizing-photos-with-duplicate-and-similarity-checking/
 
 Usage
 -----
@@ -25,6 +19,11 @@ Allowed image types are any that CImg handles (IIRC jpg, gif, png,
 bmp, and maybe a couple others), or any that ImageMagick handles
 (basically all of them) if you have the ImageMagick library installed
 (CImg will call out to ImageMagick if it can't read an image itself).
+
+It's also possible to add support for producing a fingerprint from a
+blob of memory containing image data. I can add this if anyone
+actually wants it, but I've more or less abandoned this project for
+the moment.
 
 ### Caveats:
 
