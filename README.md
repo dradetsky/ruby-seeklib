@@ -67,24 +67,8 @@ SeekLib.calc_diff(rss, rss) + 50           # => 9.8899996727705 (yep, unfortunat
 Getting
 -------
 
-It's not actually published yet, so you have to do everything yourself.
-
-### Quick Way
-
-1. Get repo dradetsky/seeklib and build it.
-
-2. Place resulting libseek.so in this repo's `ext` directory.
-
-3. Substitute `require './lib/seeklib'` in the above script.
-
-### Long Way
-
-1. Get repo dradetsky/seeklib and build/install it. (ha ha! good luck!)
-
-2. `gem build seeklib.gemspec`
-
-3. `gem install seeklib-0.0.1.gem`
-
+I've finally published it (well, the hacked-up 'installable' branch)
+so you can do `gem install seeklib`. It may even work!
 
 Background discussion
 ---------------------
